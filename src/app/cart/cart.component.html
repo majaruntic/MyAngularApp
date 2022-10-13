@@ -1,0 +1,18 @@
+<!-- <p>Cart</p> -->
+<br/>
+<div *ngFor="let product of items">
+  <br />
+  <h3>
+    <a [title]="product.name + 'details'" [routerLink]="['/products', product.id]">
+      {{ product.name }}
+    </a>
+  </h3>
+  <br />
+  <p> {{product.description}}</p>
+  <br />
+  <h4> Price: {{product.price | currency }}</h4>
+
+  <img src="{{product.images?.[0]}}">
+  <br />
+  <button type="button" (click)="removeFromCart(product)">Remove</button>
+</div>

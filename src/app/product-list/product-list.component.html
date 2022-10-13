@@ -1,0 +1,23 @@
+<h2>Full product list
+  
+
+<button type="button" (click)="sortByPriceAsc()">Sort Ascending</button>
+
+<button type="button" (click)="sortByPriceDesc()">Sort Descending</button>
+
+</h2>
+
+<div *ngFor="let product of products">
+
+  <h3>
+    <a [title]="product.name + ' details'" [routerLink]="['/products', product.id]">
+      {{ product.name }}
+    </a>
+  </h3>
+  <p> {{product.description}} </p>
+  <p [innerHTML]="product.features"> Features:</p>
+  <h4> Price: {{product.price | currency}} </h4>
+
+  <img src="{{product.images?.[0]}}">
+
+</div>
